@@ -1,7 +1,12 @@
 ```mermaid
 flowchart LR
-    Source[Source data] --> Bronze[Bronze<br/>raw, as received]
-    Bronze --> Silver[Silver<br/>cleaned and validated]
-    Silver --> Gold[Gold<br/>business-ready]
-    Gold --> Consumers[Reports and analytics]
+    A["CSV, JSON, text and Excel"] --> B["Ingestion"]
+    B --> C["Bronze: raw data"]
+    C --> D["Silver: cleaned and validated"]
+    D --> E["Gold: business-ready data"]
+    E --> F["Reports and analytics"]
+    G["GitHub CI/CD"] --> H["Deploy to Fabric"]
+    H -. runs .-> B
 ```
+
+
